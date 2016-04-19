@@ -4,3 +4,4 @@ simulation/modelsim/*
 .qpf
 .qsf
 .qws
+.vhd.bak
