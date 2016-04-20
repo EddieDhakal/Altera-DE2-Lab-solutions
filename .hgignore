@@ -1,7 +1,8 @@
 db/*
 output_files/*
-simulation/modelsim/*
+simulation/*
 .qpf
 .qsf
 .qws
 .vhd.bak
+.vwf.temp
