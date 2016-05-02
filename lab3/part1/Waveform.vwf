@@ -83,9 +83,9 @@ SIGNAL("S")
 	PARENT = "";
 }
 
-GROUP("i")
+GROUP("inputs")
 {
-	MEMBERS = "Clk", "S", "R";
+	MEMBERS = "R", "S", "Clk";
 }
 
 TRANSITION_LIST("Clk")
@@ -95,11 +95,10 @@ TRANSITION_LIST("Clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 1;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
+			REPEAT = 5;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
-		LEVEL 0 FOR 20.0;
 	}
 }
 
@@ -128,9 +127,9 @@ TRANSITION_LIST("R")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 2;
-			LEVEL 0 FOR 20.0;
-			LEVEL 1 FOR 20.0;
+			REPEAT = 1;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
 		}
 		LEVEL 0 FOR 20.0;
 	}
@@ -143,17 +142,18 @@ TRANSITION_LIST("S")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 5;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 2;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
 		}
+		LEVEL 0 FOR 20.0;
 	}
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "i";
-	EXPAND_STATUS = COLLAPSED;
+	CHANNEL = "inputs";
+	EXPAND_STATUS = EXPANDED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
 	TREE_LEVEL = 0;
@@ -162,7 +162,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Clk";
+	CHANNEL = "R";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -182,7 +182,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "R";
+	CHANNEL = "Clk";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
